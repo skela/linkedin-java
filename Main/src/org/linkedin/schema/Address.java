@@ -35,7 +35,7 @@ public class Address
      *     {@link String }
      *     
      */
-    String getStreet1()
+	public String getStreet1()
     {
     	return street1;
     }
@@ -48,7 +48,7 @@ public class Address
      *     {@link String }
      *     
      */
-    String getStreet2()
+	public String getStreet2()
     {
     	return street2;
     }
@@ -61,7 +61,7 @@ public class Address
      *     {@link String }
      *     
      */
-    String getCity()
+	public String getCity()
     {
     	return city;
     }
@@ -74,7 +74,7 @@ public class Address
      *     {@link String }
      *     
      */
-    String getState()
+	public String getState()
     {
     	return state;
     }
@@ -87,7 +87,7 @@ public class Address
      *     {@link String }
      *     
      */
-    String getPostalCode()
+	public String getPostalCode()
     {
     	return postalCode;
     }
@@ -100,7 +100,7 @@ public class Address
      *     {@link String }
      *     
      */
-    String getCountryCode()
+	public String getCountryCode()
     {
     	return countryCode;
     }
@@ -113,7 +113,7 @@ public class Address
      *     {@link String }
      *     
      */
-    String getRegionCode()
+	public String getRegionCode()
     {
     	return regionCode;
     }
