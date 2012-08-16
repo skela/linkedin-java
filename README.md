@@ -1,0 +1,39 @@
+**LinkedIn Java Library**
+==============
+
+The goal of this library is to replace linkedin-j with a smaller, faster and more efficient linkedin library for java.
+Using scribe for the oauth-heavy lifting and gson for the json parsing.
+Some of the method signatures will be similar to linkedin-j for the time being, as that's the most common linkedin library for java.
+
+**Setup:**
+--------------
+After cloning the repo, you'll need to perform the following commands inside the local repo:
+	git submodule init
+	git submodule update
+
+**Note:**
+--------------
+Currently only the Connections and Person/PPL APIs have been implemented.
+
+**Known Issues:**
+--------------
+EnumSet.allOf(ProfileField.class) will not work : so for example:
+	Person person = api.getProfileForCurrentUser(EnumSet.allOf(ProfileField.class));
+or
+	Connections connections = api.getConnectionsForCurrentUser(EnumSet.allOf(ProfileField.class));
+
+**Sample Usage:**
+--------------
+	String licToken = "ConsumerKey";
+	String licSecret = "ConsumerSecret";
+	String liToken = "AccessKey";
+	String liSecret = "AccessSecret";
+
+	LinkedIn api = new LinkedIn(licToken,licSecret,liToken,liSecret);
+
+	Person person = api.getProfileForCurrentUser();
+	//Person person = api.getProfileForCurrentUser(EnumSet.of(ProfileField.ID,ProfileField.FIRST_NAME,ProfileField.LAST_NAME,ProfileField.PICTURE_URL,ProfileField.PICTURE_URLS_ORIGINAL,ProfileField.DATE_OF_BIRTH));
+	//Person person = api.getProfileById("someId",EnumSet.of(ProfileField.ID,ProfileField.FIRST_NAME,ProfileField.LAST_NAME,ProfileField.PICTURE_URL,ProfileField.PICTURE_URLS_ORIGINAL));
+	//Person person = api.getProfileById("someOtherId",EnumSet.of(ProfileField.ID,ProfileField.FIRST_NAME,ProfileField.LAST_NAME,ProfileField.PICTURE_URL,ProfileField.PRIMARY_TWITTER_ACCOUNT));		
+	Connections connections = api.getConnectionsForCurrentUser();		
+
