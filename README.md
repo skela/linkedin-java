@@ -5,8 +5,8 @@ The goal of this library is to replace linkedin-j with a smaller, faster and mor
 Using scribe for the oauth-heavy lifting and gson for the json parsing. Another goal is to avoid a common issue with most of these
 libraries, and that is they close down or make it much more difficult to allow custom classes or custom parsing of the responses.
 With this library, my goal is to allow you to use the prepared classes and class structure for the responses should you want to.
-If for example properties and data fields that have been added by LinkedIn, and these are needed and you don't have time to wait
-for this or any other library to catch up with the API, then use the GetResource function to get the JSON or XML string and do then
+However, if for example properties and data fields  have been added by LinkedIn, and these are needed, but you don't have time to wait
+for the library to catch up with the API, then use the GetResource function to get the JSON or XML string and 
 parse the data yourself.
 
 Some of the method signatures will be similar to linkedin-j for the time being, as that's the most common linkedin library for java.
@@ -49,3 +49,6 @@ or
 	// If you want the XML String
 	String personXML = api.getResource(Urls.PERSON_URL_SELF,true);
 	
+	// Or if you want to specify the url yourself, but let the library handle the parsing:
+	// Note: obviously this only works if you give it a url that points to a person resource in this case:
+	Person person2 = api.getProfileForUrl("https://api.linkedin.com/v1/people/~:(id,firstName,lastName)");
