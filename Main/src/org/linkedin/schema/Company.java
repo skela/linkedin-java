@@ -52,7 +52,7 @@ public class Company
      *     {@link String }
      *     
      */
-    String getId()
+	public String getId()
     {
     	return id;
     }
@@ -65,7 +65,7 @@ public class Company
      *     {@link String }
      *     
      */
-    String getUniversalName()
+	public String getUniversalName()
     {
     	return universalName;
     }
@@ -78,7 +78,7 @@ public class Company
      *     {@link String }
      *     
      */
-    String getDescription()
+	public String getDescription()
     {
     	return description;
     }
@@ -92,7 +92,7 @@ public class Company
      *     {@link String }
      *     
      */
-    String getIndustry()
+	public String getIndustry()
     {
     	return industry;
     }
@@ -105,7 +105,7 @@ public class Company
      *     {@link String }
      *     
      */
-    String getLogoUrl()
+	public String getLogoUrl()
     {
     	return logoUrl;
     }
@@ -118,7 +118,7 @@ public class Company
      *     {@link String }
      *     
      */
-    String getName()
+	public String getName()
     {
     	return name;
     }
@@ -131,7 +131,7 @@ public class Company
      *     {@link String }
      *     
      */
-    String getType()
+	public String getType()
     {
     	return type;
     }
@@ -144,7 +144,7 @@ public class Company
      *     {@link CompanyType }
      *     
      */
-    CompanyType getCompanyType()
+	public CompanyType getCompanyType()
     {
     	return companyType;
     }
@@ -159,7 +159,7 @@ public class Company
      *     {@link String }
      *     
      */
-    String getSize()
+	public String getSize()
     {
     	return size;
     }
@@ -174,7 +174,7 @@ public class Company
      *     {@link StockExchange }
      *     
      */
-    StockExchange getStockExchange()
+	public StockExchange getStockExchange()
     {
     	return stockExchange;
     }
@@ -188,7 +188,7 @@ public class Company
      *     {@link String }
      *     
      */
-    String getTicker()
+	public String getTicker()
     {
     	return ticker;
     }
@@ -203,7 +203,7 @@ public class Company
      *     {@link Specialties }
      *     
      */
-    Specialties getSpecialties()
+	public Specialties getSpecialties()
     {
     	return specialties;
     }
@@ -218,7 +218,7 @@ public class Company
      *     {@link String }
      *     
      */
-    String getBlogRssUrl()
+	public String getBlogRssUrl()
     {
     	return blogRssUrl;
     }
@@ -233,7 +233,7 @@ public class Company
      *     {@link String }
      *     
      */
-    String getTwitterId()
+	public String getTwitterId()
     {
     	return twitterId;
     }
@@ -247,7 +247,7 @@ public class Company
      *     {@link String }
      *     
      */
-    String getSquareLogoUrl()
+	public String getSquareLogoUrl()
     {
     	return squareLogoUrl;
     }
@@ -261,7 +261,7 @@ public class Company
      *     {@link Locations }
      *     
      */
-    Locations getLocations()
+	public Locations getLocations()
     {
     	return locations;
     }
@@ -275,7 +275,7 @@ public class Company
      *     {@link String }
      *     
      */
-    Integer getFoundedYear()
+	public Integer getFoundedYear()
     {
     	return foundedYear;
     }
@@ -289,7 +289,7 @@ public class Company
      *     {@link String }
      *     
      */
-    Integer getEndYear()
+	public Integer getEndYear()
     {
     	return endYear;
     }
@@ -303,7 +303,7 @@ public class Company
      *     {@link String }
      *     
      */
-    Long getNumFollowers()
+	public Long getNumFollowers()
     {
     	return numFollowers;    	
     }
@@ -317,7 +317,7 @@ public class Company
      *     {@link EmailDomains }
      *     
      */
-    EmailDomains getEmailDomains()
+	public EmailDomains getEmailDomains()
     {
     	return emailDomains;
     }
@@ -331,7 +331,7 @@ public class Company
      *     {@link String }
      *     
      */
-    String getWebsiteUrl()
+	public String getWebsiteUrl()
     {
     	return websiteUrl;
     }
@@ -345,7 +345,7 @@ public class Company
      *     {@link CompanyStatus }
      *     
      */
-    CompanyStatus getStatus()
+	public CompanyStatus getStatus()
     {
     	return companyStatus;
     }
@@ -359,7 +359,7 @@ public class Company
      *     {@link EmployeeCountRange }
      *     
      */
-    EmployeeCountRange getEmployeeCountRange()
+	public EmployeeCountRange getEmployeeCountRange()
     {
     	return employeeCountRange;
     }
@@ -373,7 +373,7 @@ public class Company
      *     {@link String }
      *     
      */
-    String getKey()
+	public String getKey()
     {
     	return key;
     }

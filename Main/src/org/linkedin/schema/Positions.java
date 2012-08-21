@@ -49,7 +49,7 @@ public class Positions
      * 
      * 
      */
-    List<Position> getPositionList()
+	public List<Position> getPositionList()
     {
     	return values;
     }

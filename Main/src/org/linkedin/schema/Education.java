@@ -49,7 +49,7 @@ public class Education
      *     {@link String }
      *     
      */
-    String getId()
+	public String getId()
     {
     	return id;
     }
@@ -62,7 +62,7 @@ public class Education
      *     {@link String }
      *     
      */
-    String getSchoolName()
+	public String getSchoolName()
     {
     	return schoolName;
     }
@@ -75,7 +75,7 @@ public class Education
      *     {@link String }
      *     
      */
-    String getDegree()
+	public String getDegree()
     {
     	return degree;
     }
@@ -88,7 +88,7 @@ public class Education
      *     {@link String }
      *     
      */
-    String getNotes()
+	public String getNotes()
     {
     	return notes;
     }
@@ -101,7 +101,7 @@ public class Education
      *     {@link String }
      *     
      */
-    String getActivities()
+	public String getActivities()
     {
     	return activities;
     }
@@ -115,7 +115,7 @@ public class Education
      *     {@link String }
      *     
      */
-    String getFieldOfStudy()
+	public String getFieldOfStudy()
     {
     	return fieldOfStudy;
     }
@@ -128,7 +128,7 @@ public class Education
      *     {@link StartDate }
      *     
      */
-    StartDate getStartDate()
+	public StartDate getStartDate()
     {
     	return startDate;
     }
@@ -141,7 +141,7 @@ public class Education
      *     {@link EndDate }
      *     
      */
-    EndDate getEndDate()
+	public EndDate getEndDate()
     {
     	return endDate;
     }
