@@ -20,13 +20,15 @@ package org.linkedin.schema;
 
 public class RelationToViewer    
 {
-	public RelatedConnections relatedConnections;
+	public RelatedConnectionsLegacy relatedConnections; // Legacy
+	public RelatedConnections connections; // New
 	public Long distance;
 	public MembershipState membershipState;
 	public boolean isFollowing;
 	public boolean isLiked;
 	public AvailableActions availableActions;
 	
+
     /**
      * Gets the value of the relatedConnections property.
      * 
@@ -35,11 +37,16 @@ public class RelationToViewer
      *     {@link RelatedConnections }
      *     
      */
-    RelatedConnections getRelatedConnections()
+	RelatedConnectionsLegacy getRelatedConnections()
     {
     	return relatedConnections;
     }
 
+	RelatedConnections getConnections()
+    {
+    	return connections;
+    }
+    
     /**
      * Gets the value of the distance property.
      * 

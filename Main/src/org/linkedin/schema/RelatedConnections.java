@@ -17,6 +17,7 @@
 
 package org.linkedin.schema;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gson.annotations.SerializedName;
@@ -25,45 +26,24 @@ public class RelatedConnections
 {
 	@SerializedName("_total")
 	public long total;
-	public Connections connections;
+	@SerializedName("_start")	
+	public long start;
+	@SerializedName("_count")
+	public long count;
+	public List<PersonHolder> values;
 	
-    /**
-     * Gets the value of the personList property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the personList property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPersonList().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Person }
-     * 
-     * 
-     */
     List<Person> getPersonList()
     {
-    	if (connections!=null)
-    		return connections.values;
+    	if (values!=null)
+    	{
+    		ArrayList <Person> ppl = new ArrayList<Person>();
+    		for (PersonHolder holder : values)
+    			ppl.add(holder.person);
+    		return ppl;
+    	}
     	return null;
     }
 
-    /**
-     * Gets the value of the total property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
     long getTotal()
     {
     	return total;
