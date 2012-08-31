@@ -507,7 +507,7 @@ public class Person
      */
 	public String getPictureUrl()
     {
-    	if (pictureUrls!=null && pictureUrls.total>0 || pictureUrls.values.size()>0)
+    	if (pictureUrls!=null && pictureUrls.values!=null && pictureUrls.values.size()>0)
     		return pictureUrls.values.get(0);
     	return pictureUrl;
     }
