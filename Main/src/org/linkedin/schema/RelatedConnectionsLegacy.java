@@ -21,51 +21,7 @@ import java.util.List;
 
 import com.google.gson.annotations.SerializedName;
 
-public class RelatedConnectionsLegacy
+public class RelatedConnectionsLegacy extends Connections
 {
-	@SerializedName("_total")
-	public long total;
-	public Connections connections;
 	
-    /**
-     * Gets the value of the personList property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the personList property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getPersonList().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Person }
-     * 
-     * 
-     */
-    List<Person> getPersonList()
-    {
-    	if (connections!=null)
-    		return connections.values;
-    	return null;
-    }
-
-    /**
-     * Gets the value of the total property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    long getTotal()
-    {
-    	return total;
-    }
 }
