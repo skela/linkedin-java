@@ -707,6 +707,17 @@ public class Person
     	path = value;
     }
 
+	 /**
+     * Returns true if the person is private.
+     * If id is null, it will return false regardless.
+     *     
+     */
+	public boolean isPrivate()
+	{
+		if (id!=null && id.equals("private"))
+			return true;
+		return false;
+	}	
     
     // Parsing
 	public static Person fromJson(String json,Gson gson_) 
