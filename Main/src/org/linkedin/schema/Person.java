@@ -67,6 +67,7 @@ public class Person
 	public ImAccounts imAccounts;
 	public TwitterAccounts twitterAccounts;
 	public TwitterAccount primaryTwitterAccount;
+	public String emailAddress;
 	
     /**
      * Gets the value of the id property.
