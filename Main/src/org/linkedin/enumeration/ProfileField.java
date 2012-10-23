@@ -32,6 +32,8 @@ public enum ProfileField implements CompositeEnum<ProfileField> {
      */
     ID("id", null, true),
 
+    EMAIL_ADDRESS("email-address",null,true),
+    
     /**
      * the member's first name
      */
@@ -369,7 +371,6 @@ public enum ProfileField implements CompositeEnum<ProfileField> {
      * 	A URL to the member's public profile, if enabled.
      */
     PUBLIC_PROFILE_URL("public-profile-url", null, true);
-    
     
 	public enum Scope {
 		User, Connections, All;
