@@ -17,33 +17,11 @@
 
 package org.linkedin.schema;
 
-
-
-/**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}timestamp" minOccurs="0"/>
- *         &lt;element ref="{}person"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-public interface Like
-    extends SchemaEntity
+public class Like    
 {
-
-
+	public long timestamp;
+	public Person person;
+	
     /**
      * Gets the value of the timestamp property.
      * 
@@ -52,7 +30,10 @@ public interface Like
      *     {@link String }
      *     
      */
-    Long getTimestamp();
+	public long getTimestamp()
+    {
+    	return timestamp;
+    }
 
     /**
      * Sets the value of the timestamp property.
@@ -62,7 +43,10 @@ public interface Like
      *     {@link String }
      *     
      */
-    void setTimestamp(Long value);
+	public void setTimestamp(long value)
+    {
+    	timestamp=value;
+    }
 
     /**
      * Gets the value of the person property.
@@ -72,7 +56,10 @@ public interface Like
      *     {@link Person }
      *     
      */
-    Person getPerson();
+	public Person getPerson()
+    {
+    	return person;
+    }
 
     /**
      * Sets the value of the person property.
@@ -82,6 +69,9 @@ public interface Like
      *     {@link Person }
      *     
      */
-    void setPerson(Person value);
+	public void setPerson(Person value)
+    {
+    	person = value;
+    }
 
 }

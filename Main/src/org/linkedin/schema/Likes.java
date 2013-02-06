@@ -19,31 +19,13 @@ package org.linkedin.schema;
 
 import java.util.List;
 
+import com.google.gson.annotations.SerializedName;
 
-/**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}like" maxOccurs="unbounded"/>
- *       &lt;/sequence>
- *       &lt;attribute name="total" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-public interface Likes
-    extends SchemaEntity
+public class Likes    
 {
-
+	@SerializedName("_total")
+	public long total;
+	public List<Like>values;
 
     /**
      * Gets the value of the likeList property.
@@ -67,7 +49,10 @@ public interface Likes
      * 
      * 
      */
-    List<Like> getLikeList();
+	public List<Like> getLikeList()
+    {
+    	return values;
+    }
 
     /**
      * Gets the value of the total property.
@@ -77,16 +62,8 @@ public interface Likes
      *     {@link String }
      *     
      */
-    Long getTotal();
-
-    /**
-     * Sets the value of the total property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    void setTotal(Long value);
-
+	public long getTotal()
+    {
+    	return total; 
+    }
 }

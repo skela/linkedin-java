@@ -5,6 +5,7 @@ import java.util.Set;
 import org.linkedin.enumeration.ProfileField;
 import org.linkedin.schema.Connections;
 import org.linkedin.schema.Person;
+import org.linkedin.schema.Post;
 import org.linkedin.utils.Urls;
 import org.scribe.builder.ServiceBuilder;
 import org.scribe.builder.api.LinkedInApi;
@@ -75,7 +76,33 @@ public class LinkedIn
 	public String getResource(String url) throws RuntimeException
 	{
 		return getResource(url,false);
-	}	
+	}
+	
+	public String postResource(String url,String data,boolean useXML)
+	{		
+		OAuthRequest request = new OAuthRequest(Verb.POST,url);		
+		if (!useXML)
+			request.addHeader("x-li-format","json");		
+		request.addPayload(data);
+		
+		service.signRequest(accessToken,request);
+		try
+		{
+			Response response = request.send();
+			return response.getBody();
+		}
+		catch (RuntimeException er)
+		{
+			
+		}
+		return null;	
+	}
+	
+	public String postResource(String url,String data)
+	{
+		return postResource(url,data,false);
+	}
+
 	
 	//
 	// Person Api
@@ -211,4 +238,25 @@ public class LinkedIn
     {
     	return Connections.fromJson(getResource(url),gson);
     }
+    
+    /**
+     * Posts a discussion entry to a group
+     * For details see <a href="http://developer.linkedin.com/documents/groups-api#create">http://developer.linkedin.com/documents/groups-api#create</a>
+     * 
+     */
+    public org.linkedin.schema.Response createGroupDiscussionPost(long groupId,String title,String summary,String submittedUrl,String submittedUrlTitle,String submittedUrlDescription)
+    {
+    	String responseString = createGroupDiscussionPostRaw(groupId,title,summary,submittedUrl,submittedUrlTitle,submittedUrlDescription);
+    	return org.linkedin.schema.Response.fromJson(responseString,gson);
+    }
+    
+    public String createGroupDiscussionPostRaw(long groupId,String title,String summary,String submittedUrl,String submittedUrlTitle,String submittedUrlDescription)
+    {
+    	Post post = new Post(title,summary,submittedUrl,submittedUrlTitle,submittedUrlDescription);
+    	String url = String.format("http://api.linkedin.com/v1/groups/%d/posts",groupId);
+    	String data = post.toJson();
+    	return postResource(url,data);
+    }
+    
+    
 }

@@ -17,36 +17,14 @@
 
 package org.linkedin.schema;
 
-
-
-/**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}id" minOccurs="0"/>
- *         &lt;element ref="{}first-name"/>
- *         &lt;element ref="{}last-name"/>
- *         &lt;element ref="{}headline"/>
- *         &lt;element ref="{}picture-url"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-public interface Creator
-    extends SchemaEntity
+public class Creator    
 {
-
-
+	public String id;
+	public String firstName;
+	public String lastName;
+	public String headline;
+	public String pictureUrl;
+	
     /**
      * Gets the value of the id property.
      * 
@@ -55,7 +33,10 @@ public interface Creator
      *     {@link String }
      *     
      */
-    String getId();
+	public String getId()
+    {
+    	return id;
+    }
 
     /**
      * Sets the value of the id property.
@@ -65,7 +46,10 @@ public interface Creator
      *     {@link String }
      *     
      */
-    void setId(String value);
+	public void setId(String value)
+    {
+    	id = value;
+    }
 
     /**
      * Gets the value of the firstName property.
@@ -75,7 +59,10 @@ public interface Creator
      *     {@link String }
      *     
      */
-    String getFirstName();
+	public String getFirstName()
+	{
+		return firstName;
+	}
 
     /**
      * Sets the value of the firstName property.
@@ -85,7 +72,10 @@ public interface Creator
      *     {@link String }
      *     
      */
-    void setFirstName(String value);
+	public void setFirstName(String value)
+    {
+    	firstName=value;
+    }
 
     /**
      * Gets the value of the lastName property.
@@ -95,7 +85,10 @@ public interface Creator
      *     {@link String }
      *     
      */
-    String getLastName();
+	public String getLastName()
+    {
+    	return lastName;
+    }
 
     /**
      * Sets the value of the lastName property.
@@ -105,7 +98,10 @@ public interface Creator
      *     {@link String }
      *     
      */
-    void setLastName(String value);
+	public void setLastName(String value)
+    {
+    	lastName=value;
+    }
 
     /**
      * Gets the value of the headline property.
@@ -115,7 +111,10 @@ public interface Creator
      *     {@link String }
      *     
      */
-    String getHeadline();
+	public String getHeadline()
+    {
+    	return headline;
+    }
 
     /**
      * Sets the value of the headline property.
@@ -125,7 +124,10 @@ public interface Creator
      *     {@link String }
      *     
      */
-    void setHeadline(String value);
+	public void setHeadline(String value)
+    {
+    	headline=value;
+    }
 
     /**
      * Gets the value of the pictureUrl property.
@@ -135,7 +137,10 @@ public interface Creator
      *     {@link String }
      *     
      */
-    String getPictureUrl();
+	public String getPictureUrl()
+    {
+    	return pictureUrl;
+    }
 
     /**
      * Sets the value of the pictureUrl property.
@@ -145,6 +150,9 @@ public interface Creator
      *     {@link String }
      *     
      */
-    void setPictureUrl(String value);
+	public void setPictureUrl(String value)
+    {
+    	pictureUrl=value;
+    }
 
 }

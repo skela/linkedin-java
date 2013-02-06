@@ -19,47 +19,15 @@ package org.linkedin.schema;
 
 import java.util.List;
 
+import com.google.gson.annotations.SerializedName;
 
-/**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="comment" maxOccurs="unbounded" minOccurs="0">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element ref="{}creation-timestamp"/>
- *                   &lt;element ref="{}creator"/>
- *                   &lt;element ref="{}id"/>
- *                   &lt;element ref="{}relation-to-viewer"/>
- *                   &lt;element ref="{}text"/>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/sequence>
- *       &lt;attribute name="total" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-public interface Comments
-    extends SchemaEntity
+public class Comments
 {
-
-
-    /**
+	@SerializedName("_total")
+	public long total;
+    
+	public List<Comment> values;
+	/**
      * Gets the value of the commentList property.
      * 
      * <p>
@@ -81,26 +49,13 @@ public interface Comments
      * 
      * 
      */
-    List<Comment> getCommentList();
-
-    /**
-     * Gets the value of the total property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    Long getTotal();
-
-    /**
-     * Sets the value of the total property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    void setTotal(Long value);
-
+	public List<Comment> getCommentList()
+	{
+		return values;
+	}
+	
+	public long getTotal()
+	{
+		return total;
+	}
 }

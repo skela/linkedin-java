@@ -17,298 +17,51 @@
 
 package org.linkedin.schema;
 
+import org.linkedin.Parser;
 
+import com.google.gson.Gson;
 
-/**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{}id"/>
- *         &lt;element name="type">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="code">
- *                     &lt;simpleType>
- *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                         &lt;enumeration value="standard"/>
- *                         &lt;enumeration value="news"/>
- *                       &lt;/restriction>
- *                     &lt;/simpleType>
- *                   &lt;/element>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *         &lt;element ref="{}category" minOccurs="0"/>
- *         &lt;element ref="{}creation-timestamp"/>
- *         &lt;element ref="{}creator"/>
- *         &lt;element ref="{}summary"/>
- *         &lt;element ref="{}title"/>
- *         &lt;element ref="{}likes"/>
- *         &lt;element ref="{}relation-to-viewer"/>
- *         &lt;element ref="{}attachment"/>
- *         &lt;element ref="{}comments"/>
- *         &lt;element ref="{}site-group-post-url" minOccurs="0"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
-public interface Post
-    extends SchemaEntity
+public class Post    
 {
-
-
-    /**
-     * Gets the value of the id property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    String getId();
-
-    /**
-     * Sets the value of the id property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    void setId(String value);
-
-    /**
-     * Gets the value of the type property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Type }
-     *     
-     */
-    Type getType();
-
-    /**
-     * Sets the value of the type property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Type }
-     *     
-     */
-    void setType(Type value);
-
-    /**
-     * Gets the value of the category property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Category }
-     *     
-     */
-    Category getCategory();
-
-    /**
-     * Sets the value of the category property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Category }
-     *     
-     */
-    void setCategory(Category value);
-
-    /**
-     * Gets the value of the creationTimestamp property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    Long getCreationTimestamp();
-
-    /**
-     * Sets the value of the creationTimestamp property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    void setCreationTimestamp(Long value);
-
-    /**
-     * Gets the value of the creator property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Creator }
-     *     
-     */
-    Creator getCreator();
-
-    /**
-     * Sets the value of the creator property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Creator }
-     *     
-     */
-    void setCreator(Creator value);
-
-    /**
-     * Gets the value of the summary property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    String getSummary();
-
-    /**
-     * Sets the value of the summary property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    void setSummary(String value);
-
-    /**
-     * Gets the value of the title property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    String getTitle();
-
-    /**
-     * Sets the value of the title property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    void setTitle(String value);
-
-    /**
-     * Gets the value of the likes property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Likes }
-     *     
-     */
-    Likes getLikes();
-
-    /**
-     * Sets the value of the likes property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Likes }
-     *     
-     */
-    void setLikes(Likes value);
-
-    /**
-     * Gets the value of the relationToViewer property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link RelationToViewer }
-     *     
-     */
-    RelationToViewer getRelationToViewer();
-
-    /**
-     * Sets the value of the relationToViewer property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RelationToViewer }
-     *     
-     */
-    void setRelationToViewer(RelationToViewer value);
-
-    /**
-     * Gets the value of the attachment property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Attachment }
-     *     
-     */
-    Attachment getAttachment();
-
-    /**
-     * Sets the value of the attachment property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Attachment }
-     *     
-     */
-    void setAttachment(Attachment value);
-
-    /**
-     * Gets the value of the comments property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Comments }
-     *     
-     */
-    Comments getComments();
-
-    /**
-     * Sets the value of the comments property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Comments }
-     *     
-     */
-    void setComments(Comments value);
-
-    /**
-     * Gets the value of the siteGroupPostUrl property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    String getSiteGroupPostUrl();
-
-    /**
-     * Sets the value of the siteGroupPostUrl property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    void setSiteGroupPostUrl(String value);
+	public String id;
+	public Type type;	
+	public Category category;
+	public Long creationTimestamp;
+	public Creator creator;
+	public String summary;
+	public String title;
+	public Likes likes;
+	public RelationToViewer relationToViewer;
+	public Attachment attachment;
+	public Comments comments;
+	public String siteGroupPostUrl;
+	public Content content;	
+	
+	public Post(String title,String summary,String submittedUrl,String submittedUrlTitle,String submittedUrlDescription)
+	{
+		this.title = title;
+		this.summary=summary;		
+		this.content = new Content(submittedUrl,submittedUrlTitle,submittedUrlDescription);
+	}
+	
+	public static Post fromJson(String json,Gson gson) 
+	{
+		return Parser.fromJson(json,gson,Post.class);
+	}
+	
+	public static Post fromJson(String json) 
+	{
+		return fromJson(json,null);
+	}
+	
+	public String toJson()
+	{
+		return toJson(null);
+	}
+	
+	public String toJson(Gson gson)
+	{
+		return Parser.toJson(this,gson);
+	}
 
 }
