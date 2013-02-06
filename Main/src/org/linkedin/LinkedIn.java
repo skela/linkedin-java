@@ -22,6 +22,10 @@ import com.google.gson.Gson;
 
 public class LinkedIn 
 {
+	//
+	// Init
+	//
+	
 	OAuthService service;
 	Token accessToken;
 	Gson gson;
@@ -55,6 +59,10 @@ public class LinkedIn
 			setAccessToken(accessKey,accessSecret);		
 	}
 	
+	//
+	// Get Requests
+	//
+	
 	public String getResource(String url,boolean useXML)
 	{
 		OAuthRequest request = new OAuthRequest(Verb.GET,url);
@@ -78,6 +86,10 @@ public class LinkedIn
 		return getResource(url,false);
 	}
 	
+	//
+	// Post Requests
+	//
+
 	public String postResource(String url,String data,boolean useXML)
 	{		
 		OAuthRequest request = new OAuthRequest(Verb.POST,url);		
@@ -103,7 +115,6 @@ public class LinkedIn
 		return postResource(url,data,false);
 	}
 
-	
 	//
 	// Person Api
 	//
@@ -238,6 +249,10 @@ public class LinkedIn
     {
     	return Connections.fromJson(getResource(url),gson);
     }
+    
+    //
+	// Groups Api
+	//
     
     /**
      * Posts a discussion entry to a group
