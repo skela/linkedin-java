@@ -40,8 +40,9 @@ public class Post
 	public Post(String title,String summary,String submittedUrl,String submittedUrlTitle,String submittedUrlDescription)
 	{
 		this.title = title;
-		this.summary=summary;		
-		this.content = new Content(submittedUrl,submittedUrlTitle,submittedUrlDescription);
+		this.summary=summary;
+		if (submittedUrl!=null || submittedUrlTitle!=null || submittedUrlDescription!=null)
+			this.content = new Content(submittedUrl,submittedUrlTitle,submittedUrlDescription);
 	}
 	
 	public static Post fromJson(String json,Gson gson) 

@@ -89,15 +89,49 @@ public class LinkedIn
 	//
 	// Post Requests
 	//
-
+	
+	private org.linkedin.schema.ApiResponse postJsonResource(String url,String data)
+	{
+		org.linkedin.schema.ApiResponse apiResponse = new org.linkedin.schema.ApiResponse();
+		
+		OAuthRequest request = new OAuthRequest(Verb.POST,url);
+		request.addHeader("Content-Type", "application/json");
+		
+		// Sign it before you add the payload
+		service.signRequest(accessToken,request);
+		
+		request.addPayload(data);
+		
+		try
+		{
+			Response response = request.send();
+			apiResponse.setResponse(response);			
+		}
+		catch (Exception er)
+		{
+			apiResponse.didSucceed = false;
+			apiResponse.error = er.getMessage();
+		}
+		return apiResponse;	
+	}
+	
 	public String postResource(String url,String data,boolean useXML)
 	{		
 		OAuthRequest request = new OAuthRequest(Verb.POST,url);		
 		if (!useXML)
-			request.addHeader("x-li-format","json");		
+		{
+			request.addHeader("Content-Type", "application/json");
+		}
+		else
+		{
+			request.addHeader("Content-Type", "application/xml");
+		}
+		
+		// Sign it before you add the payload
+		service.signRequest(accessToken,request);
+		
 		request.addPayload(data);
 		
-		service.signRequest(accessToken,request);
 		try
 		{
 			Response response = request.send();
@@ -259,19 +293,25 @@ public class LinkedIn
      * For details see <a href="http://developer.linkedin.com/documents/groups-api#create">http://developer.linkedin.com/documents/groups-api#create</a>
      * 
      */
-    public org.linkedin.schema.Response createGroupDiscussionPost(long groupId,String title,String summary,String submittedUrl,String submittedUrlTitle,String submittedUrlDescription)
+    public org.linkedin.schema.ApiResponse createGroupPost(long groupId,String title,String summary)
     {
-    	String responseString = createGroupDiscussionPostRaw(groupId,title,summary,submittedUrl,submittedUrlTitle,submittedUrlDescription);
-    	return org.linkedin.schema.Response.fromJson(responseString,gson);
+    	return createGroupPost(groupId,title,summary,null,null,null);
     }
     
-    public String createGroupDiscussionPostRaw(long groupId,String title,String summary,String submittedUrl,String submittedUrlTitle,String submittedUrlDescription)
+    public org.linkedin.schema.ApiResponse createGroupPost(long groupId,String title,String summary,String submittedUrl,String submittedUrlTitle,String submittedUrlDescription)
+    {
+    	Post post = new Post(title,summary,submittedUrl,submittedUrlTitle,submittedUrlDescription);    	
+    	return postJsonResource(Urls.getGroupPostsUrl(groupId),post.toJson());
+    }
+    
+    public String createGroupPostRaw(long groupId,String title,String summary)
+    {
+    	return createGroupPostRaw(groupId,title,summary,null,null,null);
+    }
+    
+    public String createGroupPostRaw(long groupId,String title,String summary,String submittedUrl,String submittedUrlTitle,String submittedUrlDescription)
     {
     	Post post = new Post(title,summary,submittedUrl,submittedUrlTitle,submittedUrlDescription);
-    	String url = String.format("http://api.linkedin.com/v1/groups/%d/posts",groupId);
-    	String data = post.toJson();
-    	return postResource(url,data);
+    	return postResource(Urls.getGroupPostsUrl(groupId),post.toJson());
     }
-    
-    
 }

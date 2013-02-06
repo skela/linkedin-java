@@ -20,6 +20,11 @@ public class Urls
 	public final static String PERSON_CONNECTIONS_URL_SELF = URL_BASE + "people/~/connections";
 	public final static String PERSON_CONNECTIONS_URL_ID = URL_BASE + "people/%s/connections";
 	
+	public static String getGroupPostsUrl(long groupId)
+	{
+		return String.format("http://api.linkedin.com/v1/groups/%d/posts",groupId);
+	}
+	
 	public static String getProfileUrl(String startUrl,Set<ProfileField> profileFields)
 	{
 		HashMap<ProfileField,List<ProfileField>>map = new HashMap<ProfileField,List<ProfileField>>();

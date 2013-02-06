@@ -10,7 +10,7 @@ import org.linkedin.Parser;
 
 import com.google.gson.Gson;
 
-public class Response
+public class ApiRawResponse
 {
 	public long errorCode;
 	public String message;
@@ -18,12 +18,12 @@ public class Response
 	public int status;
 	public long timestamp;
 	
-	public static Response fromJson(String json,Gson gson_) 
+	public static ApiRawResponse fromJson(String json,Gson gson_) 
 	{
-		return Parser.fromJson(json,gson_,Response.class);
+		return Parser.fromJson(json,gson_,ApiRawResponse.class);
 	}
 	
-	public static Response fromJson(String json)
+	public static ApiRawResponse fromJson(String json)
 	{
 		return fromJson(json,null);
 	}
