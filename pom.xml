@@ -5,7 +5,7 @@
 	<groupId>org.linkedin-java</groupId>
 	<artifactId>linkedin-java</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0</version>
+	<version>1.00</version>
 
 	<name>LinkedIn Java library</name>
 
@@ -28,7 +28,7 @@
 	</dependencies>
 
 	<build>
-		<sourceDirectory>src</sourceDirectory>
+    <sourceDirectory>Main/src</sourceDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
