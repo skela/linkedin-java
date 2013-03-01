@@ -4,7 +4,6 @@ import org.linkedin.schema.Connections;
 import org.linkedin.schema.Person;
 import org.linkedin.utils.Urls;
 
-
 public class Main 
 {
 	public static void main(String [] args)
