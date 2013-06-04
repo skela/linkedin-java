@@ -14,8 +14,9 @@ Some of the method signatures will be similar to linkedin-j for the time being, 
 **Setup:**
 --------------
 After cloning the repo, you'll need to perform the following commands inside the local repo:
-git submodule init
-git submodule update
+
+	git submodule init
+	git submodule update
 
 **Note:**
 --------------
@@ -24,8 +25,11 @@ Currently only the Connections and Person/PPL APIs have been implemented.
 **Known Issues:**
 --------------
 EnumSet.allOf(ProfileField.class) will not work : so for example:
+
 	Person person = api.getProfileForCurrentUser(EnumSet.allOf(ProfileField.class));
+
 or
+
 	Connections connections = api.getConnectionsForCurrentUser(EnumSet.allOf(ProfileField.class));
 
 **Sample Usage:**
