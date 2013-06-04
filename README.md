@@ -14,8 +14,8 @@ Some of the method signatures will be similar to linkedin-j for the time being, 
 **Setup:**
 --------------
 After cloning the repo, you'll need to perform the following commands inside the local repo:
-	git submodule init
-	git submodule update
+git submodule init
+git submodule update
 
 **Note:**
 --------------
