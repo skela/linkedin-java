@@ -56,3 +56,8 @@ or
 	// Or if you want to specify the url yourself, but let the library handle the parsing:
 	// Note: obviously this only works if you give it a url that points to a person resource in this case:
 	Person person2 = api.getProfileForUrl("https://api.linkedin.com/v1/people/~:(id,firstName,lastName)");
+
+**License**
+--------------
+The license for this project is MIT unless otherwise specified.
+
